@@ -34,6 +34,12 @@ If not, then whose view differs from whom??
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+The CandP helper files are going to assist us in comparing the two data variables of cappun and race. Due to this being a Categorical ~ Categorical question we will first use a bar chart, then we will run a favstats command to give us graphical and numerical results. 
+
+Under the inferential results section we will run a Chi-Squared test which will suggest if there is a statistical difference in the data or not. To figure out where the idfference is, if there is one, we could normally run a fisher test but in this case there are more than two factors under the "race" category so the fisherXY function will replace it to be sufficient for all combinations. 
+
+
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
