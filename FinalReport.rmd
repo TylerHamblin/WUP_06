@@ -28,7 +28,21 @@ mydata <- na.omit(mydata)
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
 Is attitude toward capitol punishment (cappun) independent of race (race)?
-If not, then whose view differs from whom??
+If not, then whose view differs from whom?
+
+
+$H_A$: A change in race statistically results in a change in opinion towards capital punishment. 
+
+
+$H_0$: The two factors race and cappun have no affect on each other. 
+
+
+
+```{r eval=FALSE}
+mydata <- mydata %>%
+mutate(across(where(is.character), as.factor))
+```
+
 
 # Methods
 
@@ -37,7 +51,6 @@ If not, then whose view differs from whom??
 The CandP helper files are going to assist us in comparing the two data variables of cappun and race. Due to this being a Categorical ~ Categorical question we will first use a bar chart, then we will run a favstats command to give us graphical and numerical results. 
 
 Under the inferential results section we will run a Chi-Squared test which will suggest if there is a statistical difference in the data or not. To figure out where the idfference is, if there is one, we could normally run a fisher test but in this case there are more than two factors under the "race" category so the fisherXY function will replace it to be sufficient for all combinations. 
-
 
 
 # Results
