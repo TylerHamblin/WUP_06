@@ -90,9 +90,15 @@ colPerc(table1)
 
 
 ```{r}
+chisq.test(table1)
 chisqtestGC(table1)
 ```
 
+
+
+```{r}
+fisherXY(mydata$race,mydata$cappun)
+```
 
 
 ## Now with More data
