@@ -437,7 +437,7 @@ rowPerc(table1)</code></pre>
 ## Chi-Square Statistic = 19.4773 
 ## Degrees of Freedom of the table = 2 
 ## P-Value = 1e-04</code></pre>
-<pre class="r"><code>fisherXY(mydata$race,mydata$cappun)</code></pre>
+<pre class="r"><code>fisherXY(mydata$race,mydata$cappun, printAll = TRUE)</code></pre>
 <pre><code>## 
 ## contingency table:
 ##        y
@@ -464,7 +464,45 @@ rowPerc(table1)</code></pre>
 ##  1.562325 3.521989
 ## sample estimates:
 ## odds ratio 
-##   2.343236</code></pre>
+##   2.343236 
+## 
+## 
+## [1] &quot;white&quot; &quot;other&quot;
+## [1] &quot;favor&quot;  &quot;oppose&quot;
+##        y
+## x       favor oppose
+##   white   416    198
+##   other    49     31
+## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  fTempTable
+## p-value = 0.2565
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  0.7926531 2.2004761
+## sample estimates:
+## odds ratio 
+##   1.328594 
+## 
+## 
+## [1] &quot;black&quot; &quot;other&quot;
+## [1] &quot;favor&quot;  &quot;oppose&quot;
+##        y
+## x       favor oppose
+##   black    60     67
+##   other    49     31
+## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  fTempTable
+## p-value = 0.06299
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  0.3075892 1.0389651
+## sample estimates:
+## odds ratio 
+##  0.5681142</code></pre>
 </div>
 </div>
 <div id="inferential-results" class="section level2">
