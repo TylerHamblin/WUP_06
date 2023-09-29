@@ -16,6 +16,7 @@ require(tidyverse)
 require(tigerstats)
 require(knitr)
 require(foreign)
+
 GSS <-read.dta(file="GSS2016.dta")
 GSS <- droplevels(GSS)
 mydata <- select(GSS,sex,race,cappun,degree,relig,gunlaw,tvhours,owngun,age,wordsum)
@@ -33,11 +34,20 @@ If not, then whose view differs from whom??
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+
+```{r eval=FALSE}
+mydata <- mydata %>%
+mutate(across(where(is.character), as.factor))
+```
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
+
+
+
 
 ### Graphical Descriptive Results
 
@@ -47,7 +57,11 @@ If not, then whose view differs from whom??
 
 ## Now with LESS data (more variables give less data due to NA's) create the approate graphic displays to answer the question.
 
+```{r}
+barchartGC(~race + cappun,data=mydata)
+barchartGC(~race + cappun,data=mydata, type="percent")
 
+```
 
 
 
@@ -55,8 +69,24 @@ If not, then whose view differs from whom??
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~race + cappun, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
+
+
+```{r}
+
+fisherXY(mydata$race,mydata$cappun)
+
+```
 
 
 
