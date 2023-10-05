@@ -67,13 +67,17 @@ By looking at the data in this project we can see that the data is Categorical~C
 
 
 
-## Now with LESS data (more variables give less data due to NA's) create the approate graphic displays to answer the question.
 
 ```{r}
-barchartGC(~race + cappun,data=mydata)
-barchartGC(~race + cappun,data=mydata, type="percent")
-
+ggplot(mydata, aes(x = race, fill = cappun)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Capital Punishment By Race",
+       x = "Race",
+       y = "Count") +
+  theme(legend.title = element_blank(),
+        plot.title = element_text(hjust = 0.5,size = 18))
 ```
+
 
 
 
@@ -88,6 +92,14 @@ colPerc(table1)
 ```
 
 
+
+
+
+
+## Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
@@ -99,14 +111,6 @@ chisqtestGC(table1)
 fisherXY(mydata$race,mydata$cappun, printAll = TRUE)
 
 ```
-
-
-
-## Inferential Results
-
-<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
-
-`
 
 
 
