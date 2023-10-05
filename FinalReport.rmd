@@ -31,7 +31,7 @@ Is attitude toward capitol punishment (cappun) independent of race (race)?
 If not, then whose view differs from whom?
 
 
-$H_A$: A change in race statistically results in a change in opinion towards capital punishment. 
+$H_A$: A change in race statistically results in a change in opinion towards capitol punishment. 
 
 
 $H_0$: The two factors race and cappun have no affect on each other. 
@@ -70,7 +70,7 @@ barchartGC(~race + cappun,data=mydata, type="percent")
 ```
 
 
-According to the data there is a clear skew of white people that are in favor of capital punishment when compared to other races. This is not continous through out the other races and it is typical for black people especially to oppose capital punishment. 
+According to the data there is a clear skew of white people that are in favor of capitol punishment when compared to other races. This is not continuous through out the other races and it is typical for black people especially to oppose capitol punishment. 
 
 
 ## Now with The Most data (fewer variables gives more data points)
@@ -86,6 +86,8 @@ table1 <- xtabs(~race + cappun, data=mydata)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+As seen in the numerical breakdown of the data, about twice the percentage of white people are in favor of capitol punishment. When looking at black and other races there is about a 50:50 spread of whether or not an individual from that category will be in support or not. 
 
 
 
