@@ -78,7 +78,7 @@ ggplot(mydata, aes(x = race, fill = cappun)) +
         plot.title = element_text(hjust = 0.5,size = 18))
 ```
 
-
+Again we see the same disproportionate ammount of white peopel in favor of capitol punishment. Black people in this data set still are slightly more opposed to the use of it. 
 
 
 ### Numerical Descriptive Results
