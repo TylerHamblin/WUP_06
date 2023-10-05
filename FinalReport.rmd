@@ -70,7 +70,7 @@ barchartGC(~race + cappun,data=mydata, type="percent")
 ```
 
 
-
+According to the data there is a clear skew of white people that are in favor of capital punishment when compared to other races. This is not continous through out the other races and it is typical for black people especially to oppose capital punishment. 
 
 
 ## Now with The Most data (fewer variables gives more data points)
