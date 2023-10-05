@@ -135,3 +135,6 @@ Using a 99% confidence level in the fisher test we can locate where the critical
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+We have shown  that the white race still has a higher incidence of being in favor of capitol punishment compared to the two other groups even when in a smaller sample size. This was done within the graphical and numerical sections and allows us to reject $H_0$ and verify $H_A$. This circumstance does not clarify any social or environmental factors that also may differ between the large and small sample sizes so we can not confirm why the data is slightly varied. It may also be natural variation falling within the margin of error. 
+

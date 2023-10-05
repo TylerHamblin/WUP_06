@@ -419,6 +419,9 @@ rowPerc(table1)</code></pre>
 ##   black  11.43  22.64
 ##   other   9.33  10.47
 ##   Total 100.00 100.00</code></pre>
+<p>Another near 50:50 split can be seen with the black and other race
+categories. White people have about twice as many people in support when
+compared to those who oppose.</p>
 </div>
 </div>
 <div id="inferential-results" class="section level2">
@@ -458,77 +461,58 @@ rowPerc(table1)</code></pre>
 ## Chi-Square Statistic = 19.4773 
 ## Degrees of Freedom of the table = 2 
 ## P-Value = 1e-04</code></pre>
-<pre class="r"><code>fisherXY(mydata$race,mydata$cappun, printAll = TRUE)</code></pre>
+<p><span class="math inline">\(\Huge\chi^2=\sum\frac{(O-E)^2}{O}\)</span></p>
+<p>From the Chi-Squared test we see that the Statistic is still much
+higher than the critical value provided by the degrees of freedom. The
+large number shows there is a difference from the expected value and a
+small p-value shows statistical variation as well. A fisher test needs
+to be ran in order to find out where the difference occurs amongst the
+data.</p>
+<pre class="r"><code>FisherTable(table1,confL = 0.95,printAll = TRUE)</code></pre>
+<pre class="r"><code>sub_whiteBlack &lt;- mydata %&gt;% filter(race %in% c(&quot;white&quot;, &quot;black&quot;))
+sub_whiteBlack$race &lt;- factor(sub_whiteBlack$race, levels = c(&quot;white&quot;, &quot;black&quot;) )
+table2 &lt;- xtabs(~cappun + race, data=sub_whiteBlack)
+fisherResult &lt;- fisher.test(table2)
+fisherResult</code></pre>
 <pre><code>## 
-## contingency table:
-##        y
-## x       favor oppose
-##   white   416    198
-##   black    60     67
-##   other    49     31
-## 
-## ***All 2X2 tests****
-## 
-## [1] &quot;white&quot; &quot;black&quot;
-## [1] &quot;favor&quot;  &quot;oppose&quot;
-##        y
-## x       favor oppose
-##   white   416    198
-##   black    60     67
-## 
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
-## data:  fTempTable
+## data:  table2
 ## p-value = 1.741e-05
 ## alternative hypothesis: true odds ratio is not equal to 1
 ## 95 percent confidence interval:
 ##  1.562325 3.521989
 ## sample estimates:
 ## odds ratio 
-##   2.343236 
-## 
-## 
-## [1] &quot;white&quot; &quot;other&quot;
-## [1] &quot;favor&quot;  &quot;oppose&quot;
-##        y
-## x       favor oppose
-##   white   416    198
-##   other    49     31
-## 
-##  Fisher&#39;s Exact Test for Count Data
-## 
-## data:  fTempTable
-## p-value = 0.2565
-## alternative hypothesis: true odds ratio is not equal to 1
-## 95 percent confidence interval:
-##  0.7926531 2.2004761
-## sample estimates:
-## odds ratio 
-##   1.328594 
-## 
-## 
-## [1] &quot;black&quot; &quot;other&quot;
-## [1] &quot;favor&quot;  &quot;oppose&quot;
-##        y
-## x       favor oppose
-##   black    60     67
-##   other    49     31
-## 
-##  Fisher&#39;s Exact Test for Count Data
-## 
-## data:  fTempTable
-## p-value = 0.06299
-## alternative hypothesis: true odds ratio is not equal to 1
-## 95 percent confidence interval:
-##  0.3075892 1.0389651
-## sample estimates:
-## odds ratio 
-##  0.5681142</code></pre>
+##   2.343236</code></pre>
+<pre class="r"><code>low=(fisherResult$conf.int[1]/(fisherResult$conf.int[1] + 1))*100
+hi=(fisherResult$conf.int[2]/(fisherResult$conf.int[2] + 1))*100
+print(&quot;Confidence Interval&quot;)</code></pre>
+<pre><code>## [1] &quot;Confidence Interval&quot;</code></pre>
+<pre class="r"><code>low</code></pre>
+<pre><code>## [1] 60.97294</code></pre>
+<pre class="r"><code>hi</code></pre>
+<pre><code>## [1] 77.88584</code></pre>
+<p>Using a 99% confidence level in the fisher test we can locate where
+the critical p-value occurs. Again the greatest difference is among the
+white and black race groups where whites tend to support capitol
+punishment and blacks tend to statistically slightly oppose capitol
+punishment. Most of the p-values are lower than 0.05 but that has little
+application within this question as one is significantly lower than the
+rest.</p>
 </div>
 </div>
 <div id="discussion-and-conclusion" class="section level1">
 <h1>Discussion and Conclusion</h1>
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+<p>We have shown that the white race still has a higher incidence of
+being in favor of capitol punishment compared to the two other groups
+even when in a smaller sample size. This was done within the graphical
+and numerical sections and allows us to reject <span class="math inline">\(H_0\)</span> and verify <span class="math inline">\(H_A\)</span>. This circumstance does not clarify
+any social or environmental factors that also may differ between the
+large and small sample sizes so we can not confirm why the data is
+slightly varied. It may also be natural variation falling within the
+margin of error.</p>
 </div>
 
 
