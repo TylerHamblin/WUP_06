@@ -123,4 +123,11 @@ By running a FisherXY test with a confidence level of 99% we can see where the p
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhaps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+By using graphical and numerical strings of code, the white race typically has more instances of being in favor of capitol punishment when compared to the other race categories. After determining that a statistical difference occurred somewhere and solidifying the evidence between the Black and White races, we can reject the null hypothesis and accept the alternative. In addition we used branch 2 to look into a similar circumstance but with a smaller sample size. We have similar results after running the bar graph and percentage numerical results commands. The multiple p-values in this branch are replaced by a single p-value in the second and a smaller Chi-Squared Statistic, from 80 to 19, is used. What can be interpreted from this is that the larger the data frame, the more differences appear. We can still state that there is correlation in the two cases but more 
+research would be needed to decided what the cause of this change is. 
+
+
+
+
