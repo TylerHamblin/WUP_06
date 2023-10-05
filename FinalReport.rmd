@@ -105,11 +105,28 @@ chisq.test(table1)
 chisqtestGC(table1)
 ```
 
+$\Huge\chi^2=\sum\frac{(O-E)^2}{O}$
+
+
+From the Chi-Squared test we see that the Statistic is still much higher than the critical value provided by the degrees of freedom. The large number shows there is a difference from the expected value and a small p-value shows statistical variation as well. A fisher test needs to be ran in order to find out where the difference occurs amongst the data. 
+
+
+```{r ,eval=FALSE, include=TRUE}
+FisherTable(table1,confL = 0.95,printAll = TRUE)
+```
+
 
 ```{r}
-
-fisherXY(mydata$race,mydata$cappun, printAll = TRUE)
-
+sub_whiteBlack <- mydata %>% filter(race %in% c("white", "black"))
+sub_whiteBlack$race <- factor(sub_whiteBlack$race, levels = c("white", "black") )
+table2 <- xtabs(~cappun + race, data=sub_whiteBlack)
+fisherResult <- fisher.test(table2)
+fisherResult
+low=(fisherResult$conf.int[1]/(fisherResult$conf.int[1] + 1))*100
+hi=(fisherResult$conf.int[2]/(fisherResult$conf.int[2] + 1))*100
+print("Confidence Interval")
+low
+hi
 ```
 
 
