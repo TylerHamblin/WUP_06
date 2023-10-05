@@ -49,6 +49,7 @@ mutate(across(where(is.character), as.factor))
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
 
+By looking at the data in this project we can see that the data is Categorical~Categorical meaning that we will use the Cat_Cat helper file from the CandP zip. We will run commands for a bar chart to graphically express the data and a table to show the numerical version. Finally under the inferential data section a Chi-Squared test will tell us if there is a statistical difference or not but not where the difference is. For that we will rely on a FisherXY test which runs the fisher test in a loop for a multitude of combinations. 
 
 
 # Results
