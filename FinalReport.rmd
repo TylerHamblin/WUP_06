@@ -91,7 +91,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+Another near 50:50 split can be seen with the black and other race categories. White people have about twice as many people in support when compared to those who oppose. 
 
 
 
