@@ -31,15 +31,25 @@ mydata <- na.omit(mydata)
 Is attitude toward capitol punishment (cappun) independent of race (race)?
 If not, then whose view differs from whom??
 
-# Methods
 
-<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+$H_A$: A change in race statistically results in a change in opinion towards capitol punishment. 
+
+
+$H_0$: The two factors race and cappun have no affect on each other. 
+
 
 
 ```{r eval=FALSE}
 mydata <- mydata %>%
 mutate(across(where(is.character), as.factor))
 ```
+# Methods
+
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+
+
 
 # Results
 
