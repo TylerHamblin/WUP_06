@@ -130,6 +130,7 @@ hi
 ```
 
 
+Using a 99% confidence level in the fisher test we can locate where the critical p-value occurs. Again the greatest difference is among the white and black race groups where whites tend to support capitol punishment and blacks tend to statistically slightly oppose capitol punishment. Most of the p-values are lower than 0.05 but that has little application within this question as one is significantly lower than the rest. 
 
 # Discussion and Conclusion
 
