@@ -106,12 +106,16 @@ chisqtestGC(table1)
 ```
 
 
+By running a Chi-Squared test we can prove that the Chi-Squared Statistic is higher than the critical value derived from our degrees of freedom. This big number shows that there is significant difference in the data when compared to an expected value. A very small p-value, $2.2 \text{ x } 10^{-16}$, suggests that there is a near guarantee that there will be a difference somewhere along the data. The exact location can be found with a Fisher test. 
+
+
 
 ```{r}
 fisherXY(mydata$race,mydata$cappun,printAll = TRUE)
 ```
 
 
+By running a FisherXY test with a confidence level of 99% we can see where the p-value suggests a difference in data occurs. the relationship between the black and white races is where the greatest significance can be noticed. It is also notable that almost all of the p-values are less than 0.05 but one is significantly lower than the rest and deserves extra attention. 
 
 
 ## More data version
