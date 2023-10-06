@@ -111,9 +111,10 @@ $\Huge\chi^2=\sum\frac{(O-E)^2}{O}$
 From the Chi-Squared test we see that the Statistic is still much higher than the critical value provided by the degrees of freedom. The large number shows there is a difference from the expected value and a small p-value shows statistical variation as well. A fisher test needs to be ran in order to find out where the difference occurs amongst the data. 
 
 
-```{r ,eval=FALSE, include=TRUE}
-FisherTable(table1,confL = 0.95,printAll = TRUE)
+```{r}
+fisherXY(mydata$race,mydata$cappun,printAll = TRUE)
 ```
+
 
 
 ```{r}
@@ -130,7 +131,7 @@ hi
 ```
 
 
-Using a 99% confidence level in the fisher test we can locate where the critical p-value occurs. Again the greatest difference is among the white and black race groups where whites tend to support capitol punishment and blacks tend to statistically slightly oppose capitol punishment. Most of the p-values are lower than 0.05 but that has little application within this question as one is significantly lower than the rest. 
+Using a 99% confidence level in the fisherXY test we can locate where the critical p-value occurs. Again the greatest difference is among the white and black race groups where whites tend to support capitol punishment and blacks tend to statistically slightly oppose capitol punishment. Most of the p-values are lower than 0.05 but that has little application within this question as one is significantly lower than the rest. 
 
 # Discussion and Conclusion
 
